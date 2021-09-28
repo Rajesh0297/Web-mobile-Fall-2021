@@ -1,0 +1,33 @@
+
+  <form [formGroup]="serviceform" class="normal-form">
+        <div class="controles-container">
+          <mat-form-field style="display: block" >
+            <input formControlName="number" matInput placeholder="Number">
+            <mat-error *ngIf="serviceform.controls['number'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="serviceform.controls['number'].errors?.pattern">Must be a number.</mat-error>
+          </mat-form-field>
+          <mat-form-field style="display: block">
+            <input formControlName="name" matInput placeholder="Name">
+            <mat-error *ngIf="serviceform.controls['name'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="serviceform.controls['name'].errors?.minlength">Minimum 2 charactors needed.</mat-error>
+          </mat-form-field>
+          <mat-form-field style="display: block">
+            <input formControlName="subject" matInput placeholder="Subject">
+            <mat-error *ngIf="serviceform.controls['subject'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="serviceform.controls['subject'].errors?.minlength">Minimum 2 charactors needed.</mat-error>
+          </mat-form-field>
+          <mat-form-field style="display: block">
+            <input formControlName="dueDate" matInput [matDatepicker]="picker" placeholder="Due Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        
+        </div>
+        <div class="button-row" style="    display: flex;
+        justify-content: space-around;">
+            <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="serviceform.invalid">Submit</button>
+            
+        </div>
+  </form>
+  
