@@ -1,0 +1,36 @@
+<div class="button-row">
+  <a [routerLink]="['/books']" color="primary" mat-raised-button>
+    <mat-icon>list</mat-icon>
+  </a>
+</div>
+
+
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" class="form-control"  required [(ngModel)]="bookObj.isbn" name="isbn">     
+</div>
+
+<div class="form-group">
+  <label for="title">Tiltle</label>
+  <input type="text"  class="form-control"  [(ngModel)]="bookObj.title" name="title">
+</div>
+<div class="form-group">
+  <label for="description">description</label>
+  <input type="text"  class="form-control"  [(ngModel)]="bookObj.description" name="description">
+</div>
+<div class="form-group">
+  <label for="author">author</label>
+  <input type="text"  class="form-control"  [(ngModel)]="bookObj.author" name="author">
+</div>
+<div class="form-group">
+  <label for="publisher">publisher</label>
+  <input type="text"  class="form-control"  [(ngModel)]="bookObj.publisher" name="publisher">
+</div>
+<div class="form-group">
+  <label for="published_year">publisher year</label>
+  <input type="text"  class="form-control"  [(ngModel)]="bookObj.published_year" name="published_year">
+</div>
+
+
+<button  class="m-3" (click)="onSubmit(); ">Update</button>
+
