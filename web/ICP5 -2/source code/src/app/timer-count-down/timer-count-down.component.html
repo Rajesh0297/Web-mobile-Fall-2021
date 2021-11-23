@@ -1,0 +1,73 @@
+<div class="timer">
+  <h4> Count down timer </h4>
+</div>
+
+<div class="container">
+  <div class="balloon white">
+    <div class="star-red"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+
+<div class="balloon red">
+  <div class="star"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+
+<div class="balloon blue">
+  <div class="star"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+  <div id="timer">
+    <div class=days>
+  <div class=numbers>  {{daysToDday}}  </div>days</div>
+<div class=hours>
+  <div class=numbers>  {{hoursToDday}}  </div>hours</div> 
+<div class=minutes>
+  <div class=numbers>{{minutesToDday}}</div>minutes</div> 
+<div class=seconds> 
+  <div class=numbers>{{secondsToDday}}</div>seconds</div>
+</div> 
+<div><h1 style="font-size: 35px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;">{{dDay | date:'medium'}}</h1></div>
+
+  <div style="display: flex;
+  justify-content: center;"><button mat-raised-button color="primary" (click)="openDateDialog()">Change Date</button>
+  <div style="display: flex;
+  justify-content: center;" *ngIf="dateToggle">
+    <mat-form-field>
+        <input matInput [ngxMatDatetimePicker]="picker" 
+                        placeholder="Choose a date" 
+                        [(ngModel)]="dDay"
+                        (ngModelChange)="updateTimer()"
+                        [min]="minDate">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker 
+          [showSpinners]="true" 
+          [showSeconds]="true"
+          [stepHour]=1 [stepMinute]=1 
+          [stepSecond]=1
+          [touchUi]="false"
+          [color]="'primary'">
+        </ngx-mat-datetime-picker>
+      </mat-form-field>
+    </div></div>
+  </div>
+  
