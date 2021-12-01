@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
@@ -83,18 +84,16 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+
+        toggleButton();
         Button home = (Button) findViewById(R.id.btn_logout);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, com.vijaya.firebase.LoginActivity.class);
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
-
-
-        toggleButton();
-
     }
 
     // Changing button text
@@ -162,5 +161,28 @@ public class HomeActivity extends AppCompatActivity {
 
         if (!TextUtils.isEmpty(phone))
             mFirebaseDatabase.child(userId).child("phone").setValue(phone);
+    }
+
+    public void delete(View view) {
+        String name = inputName.getText().toString();
+        String phone = inputPhone.getText().toString();
+        Query entries = mFirebaseDatabase.orderByChild("name").equalTo(name);
+
+        entries.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
+                    appleSnapshot.getRef().removeValue();
+                }
+                inputName.setText("");
+                inputPhone.setText("");
+                txtDetails.setText("");
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
     }
 }

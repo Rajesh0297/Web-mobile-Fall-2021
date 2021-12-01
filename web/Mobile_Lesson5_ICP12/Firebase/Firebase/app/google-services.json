@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "351742205913",
-    "firebase_url": "https://fir-test-a3a52-default-rtdb.firebaseio.com",
-    "project_id": "fir-test-a3a52",
-    "storage_bucket": "fir-test-a3a52.appspot.com"
+    "project_number": "842603658985",
+    "firebase_url": "https://lesson5-f6e7a-default-rtdb.firebaseio.com",
+    "project_id": "lesson5-f6e7a",
+    "storage_bucket": "lesson5-f6e7a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:351742205913:android:23b123ac2b4513771143c8",
+        "mobilesdk_app_id": "1:842603658985:android:c96959e7305ab485a3ba78",
         "android_client_info": {
           "package_name": "com.vijaya.firebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "351742205913-4sq47i7oho6l7u7tfum4f4ffrv22o8gp.apps.googleusercontent.com",
+          "client_id": "842603658985-fm1b8domk9kaderpgpce6pqu48kpl9cm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBtculBSNtqzCACDaiwHQM8dnw9kH_WJEM"
+          "current_key": "AIzaSyB35j8lwm3UO3D1DpytMGpzzx6fqmTI5UA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "351742205913-4sq47i7oho6l7u7tfum4f4ffrv22o8gp.apps.googleusercontent.com",
+              "client_id": "842603658985-fm1b8domk9kaderpgpce6pqu48kpl9cm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
