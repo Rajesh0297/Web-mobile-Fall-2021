@@ -1,5 +1,6 @@
 package com.vijaya.firebase;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -82,8 +83,18 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+        Button home = (Button) findViewById(R.id.btn_logout);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, com.vijaya.firebase.LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         toggleButton();
+
     }
 
     // Changing button text
